@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Assgn2.AssetTracking.Data\Assgn2.AssetTracking.Data.csproj" />
+    <ProjectReference Include="..\Assgn2.AssetTracking.Domain\Assgn2.AssetTracking.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
