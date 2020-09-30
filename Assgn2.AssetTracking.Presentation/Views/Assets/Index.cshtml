@@ -27,21 +27,23 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssetType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SerialNumber)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssetType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SerialNumber)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@Html.ActionLink("Search Assets", "Search")
