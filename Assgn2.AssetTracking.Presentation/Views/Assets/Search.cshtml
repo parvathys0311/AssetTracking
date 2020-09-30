@@ -2,30 +2,38 @@
 @{
     ViewData["Title"] = "Search";
 }
-
+<br />
 <h1>Search Assets</h1>
+<br />
+<label>Choose an asset type:   <select id="uxAssetTypes" asp-items="ViewBag.AssetTypes"></select></label>
 
-<select id="uxAssetTypes" asp-items="ViewBag.AssetTypes"></select>
+<br />
+<br />
 <div id="uxDisplay">
     @await Component.InvokeAsync("AssetsByType", 0)
 </div>
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
-    @section Scripts{
-        <script>
-            $(document).ready(function () {
 
-                $("#uxAssetTypes").change(function () {
-                    var propertyTypeId = $("#uxAssetTypes").val();
-                    
-                    $.ajax({
-                        method: 'GET',
-                        url: '/Assets/GetAssetsByType',
-                        data: { id: propertyTypeId }
-                    }).done(function (result, statusText, xhdr) {
-                        $("#uxDisplay").html(result);
-                    });
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            $("#uxAssetTypes").change(function () {
+                var propertyTypeId = $("#uxAssetTypes").val();
+
+                $.ajax({
+                    method: 'GET',
+                    url: '/Assets/GetAssetsByType',
+                    data: { id: propertyTypeId }
+                }).done(function (result, statusText, xhdr) {
+                    $("#uxDisplay").html(result);
                 });
             });
-        </script>
-    }
+        });
+    </script>
+}
 

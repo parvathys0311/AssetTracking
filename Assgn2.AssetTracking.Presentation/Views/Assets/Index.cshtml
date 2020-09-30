@@ -3,14 +3,13 @@
 @{
     ViewData["Title"] = "Asset List";
 }
-
+<br />
 <h1>List of Assets</h1>
+<br />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
-    <thead>
+    <thead class="bg-dark text-white">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
@@ -46,4 +45,8 @@
         }
     </tbody>
 </table>
-@Html.ActionLink("Search Assets", "Search")
+<br />
+
+@*@Html.ActionLink("Search Assets", "Search")*@
+
+<a href="~/Assets/Search" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Search for Assets</a>

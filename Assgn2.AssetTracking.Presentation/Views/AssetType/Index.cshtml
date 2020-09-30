@@ -4,13 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<br />
+<h3>List of Asset Types</h3>
+<br />
 <table class="table">
-    <thead>
+    <thead class="bg-dark text-white">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Id)
@@ -33,3 +31,9 @@
 }
     </tbody>
 </table>
+<br />
+@*<p>
+    <a asp-action="Create">Add New Asset Type</a>
+</p>*@
+
+<a href="~/AssetType/Create" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Add new asset type</a>
