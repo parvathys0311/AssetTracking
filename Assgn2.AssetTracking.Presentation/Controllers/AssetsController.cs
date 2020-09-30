@@ -9,6 +9,11 @@ using Assgn2.AssetTracking.Presentation.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+/*
+ * This is a web-based Asset Tracking Application
+ * Author: Parvathy Sudhakaran
+ * Date of Submission: September 2020
+ */
 namespace Assgn2.AssetTracking.Presentation.Controllers
 {
     public class AssetsController : Controller
@@ -29,6 +34,7 @@ namespace Assgn2.AssetTracking.Presentation.Controllers
 
         public IActionResult Search()
         {
+            //get all asset types
             var types = GetAssetTypes();
             ViewBag.AssetTypes = types;
             return View();
@@ -40,6 +46,7 @@ namespace Assgn2.AssetTracking.Presentation.Controllers
             var names = new SelectList(types, "Value", "Text");
 
             var list = names.ToList();
+            //add "all assets" to the list
             list.Insert(0, new SelectListItem
             {
                 Text = "All Assets",
@@ -53,14 +60,6 @@ namespace Assgn2.AssetTracking.Presentation.Controllers
         {
             return ViewComponent("AssetsByType", id);
         }
-
-        //public IActionResult Assets(int id)
-        //{
-        //    //go to rentals manager, get all rentals of this property types
-        //    var filteredAssets = AssetManager.GetAllByAssetType(id);
-        //    var result = $"Count: {filteredAssets.Count}";
-        //    return Content(result);
-        //}
 
         public IActionResult Create()
         {
